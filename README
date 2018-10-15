@@ -1,0 +1,33 @@
+将标记的钢铁数据集转变为Camvid类型
+
+原始数据位置：https://github.com/fourmi1995/IronDataset/tree/master/Data
+
+处理后图片所在位置：IronData_Camvid 
+
+Instruction:
+
+##1_resize.py 
+              将图片尺寸调整为 宽度480 高度360 
+              注意：Mask要取单通道采用最近邻算法进行缩放，
+              主要是保证灰度化后不同类之间的灰度值差异大
+
+
+##2_check_pixel_change_class.py
+              用于检测图片中存在的像素值
+              铁素体：0 贝氏体：38
+              图标：75  珠光体：113
+              分别对应下面的0,1,2,3类
+              查看像素值时要采用一种方式读取图片（PS读取的像素值有很大问题）
+              本代码采用PIL读取
+
+
+##3_maks_change_class.py
+               将mask中的像素值转为对应的类别值
+
+
+##4_split_train_test.py
+               从原图中随机抽取生成训练集和测试集
+
+##5_create_list.py
+               生成txt文件存储图片位置
+              
