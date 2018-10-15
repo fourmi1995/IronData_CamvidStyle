@@ -11,7 +11,6 @@ Instruction:
               注意：Mask要取单通道采用最近邻算法进行缩放，
               主要是保证灰度化后不同类之间的灰度值差异大
 
-
 ##2_check_pixel_change_class.py
               用于检测图片中存在的像素值
               铁素体：0 贝氏体：38
@@ -20,10 +19,8 @@ Instruction:
               查看像素值时要采用一种方式读取图片（PS读取的像素值有很大问题）
               本代码采用PIL读取
 
-
 ##3_maks_change_class.py
                将mask中的像素值转为对应的类别值
-
 
 ##4_split_train_test.py
                从原图中随机抽取生成训练集和测试集
