@@ -43,8 +43,8 @@ def split_train_test(path,scale):
         if number < (int) (scale * len(Indexs)):
             ImgName = OrigRoot + imgs_all + Names[Indexs[number]]
             TrainImgName = train_imgs + Names[Indexs[number]]
-            MaskName = OrigRoot + mask_all + Names[Indexs[number]]
-            TrainMaskName = train_masks + Names[Indexs[number]]
+            MaskName = OrigRoot + mask_all + Names[Indexs[number]][:-4]+'.png'
+            TrainMaskName = train_masks + Names[Indexs[number]][:-4]+'.png'
             img = Image.open(ImgName)
             mask = Image.open(MaskName)
             img.save(TrainImgName)
@@ -56,8 +56,8 @@ def split_train_test(path,scale):
         else:
             ImgName = OrigRoot + imgs_all + Names[Indexs[number]]
             TestImgName = test_imgs + Names[Indexs[number]]
-            MaskName = OrigRoot + mask_all + Names[Indexs[number]]
-            TestMaskName = test_masks + Names[Indexs[number]] 
+            MaskName = OrigRoot + mask_all + Names[Indexs[number]][:-4]+'.png'
+            TestMaskName = test_masks + Names[Indexs[number]][:-4]+'.png' 
             img = Image.open(ImgName)
             mask = Image.open(MaskName)
             img.save(TestImgName)
