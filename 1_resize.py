@@ -20,7 +20,7 @@ def resizeImg(ImgPath):
     for root,dirs,files in os.walk(ImgPath,topdown=False):
         for file in files:
             imgpath = root + '/' + file
-            savepath = ImgChangedPath + file[:-4]+'.png'
+            savepath = ImgChangedPath + file[:-4]+'.jpg'
             img = Image.open(imgpath)
             new_img = img.resize((width,height),Image.NEAREST)
             new_img.save(savepath)
